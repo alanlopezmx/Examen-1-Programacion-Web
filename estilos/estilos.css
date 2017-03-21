@@ -748,7 +748,7 @@ ul.menu li:hover ul{
   height: 557px;
 }
 
-.section5 .container{
+.section5 .container,.testimonial .container{
   margin-left: 10%;
   margin-right: 10%;
   padding-left: 15px;
@@ -885,6 +885,12 @@ ul.menu li:hover ul{
   padding: 5px;
 }
 
+.contact .contact_left{
+  float: left;
+}
+.contact .contact_right{
+  float: right;
+}
 
  .contact_form input,textarea{
   display:block;
@@ -1127,10 +1133,11 @@ ul.menu li:hover ul{
     display: block;
   }
   .contact .contact_left{
+    margin-left: 10%;
     margin-bottom: 30px;
   }
   .contact .contact_right,.contact_left{
-    float: none;
+    clear:both;
   }
 
    .contact .contact_form input[type='text']{
@@ -1157,12 +1164,6 @@ ul.menu li:hover ul{
   }
   .header_top{
     padding-right: 10%;
-  }
-  .contact .contact_left{
-    float: left;
-  }
-  .contact .contact_right{
-    float: right;
   }
   .contact .container{
     display: inline-flex;
