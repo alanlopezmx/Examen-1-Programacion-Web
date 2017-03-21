@@ -14,19 +14,72 @@ a{
   text-decoration: none;
 }
 
+.imagen{
+  z-index: -1;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 1050px;
+  background-image: url(../imagenes/background.jpg);
+  background-size: 100% 100%;
+}
+
+.icon-bars{
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 85px;
+  right: 20px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+}
+
+.menu_movil{
+  display: none;
+  border-top: 1px solid rgb(47,182,229);
+  position: absolute;
+  top: 120px;
+  right: 25px;
+  z-index: 5;
+  width: 70%;
+  background-color: rgb(7,17,20);
+}
+
+.menu_movil a{
+  font-size: 13px;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid rgb(23,27,48);
+  transition: all .3s linear;
+}
+
 .section1 img{
   width: 100%;
   margin-bottom: 10px;
 }
 
 .header_top{
+  z-index: 1;
   font-size: 14px;
   position: absolute;
+  display: flex;
   width: 100%;
   height: 45px;
   background-color: rgba(20, 167, 249, 0.4);
   padding-left: 12%;
-  padding-right: 10%;
+  /*padding-right: 10%;*/
+}
+
+.header_top_left{
+  width: 50%;
+  display: flex;
+}
+.header_top_right{
+  width: 50%;
+  display: flex;
 }
 
 .header_bottom{
@@ -42,12 +95,85 @@ a{
   display: flex;
   float: right;
 }
+/*------------------------------
+
+nav ul{
+  list-style: none;
+  padding: 0;
+}
+nav a{
+  text-decoration: none;
+  color: #ddd;
+  padding: 0 5px;
+  display: block;
+  width: 150px;
+  text-align: center;
+  transition: 0.7s;
+}
+nav a:hover{
+  background: rgba(0,0,0,0.5);
+}
+nav li{
+  line-height: 5px;
+  position: relative;
+
+}
+.menu ul{
+  position: absolute;
+}
+
+/* Primer nivel de lista
+.menu{
+  display: table;
+  width: 100%;
+}
+nav > ul > li{
+  float: left;
+}
+/* Segundo nivel
+nav li li{
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5 ease .2s;
+}
+
+nav li:hover > ul > li{
+  max-height: 1000px;
+  overflow: visible;
+}
+.menu > li > li{
+  top: 100%;
+}
+
+/* Tercer nivel
+
+.menu ul ul{
+  left: 100%;
+  top: 0;
+}
+ul li ul li{
+  display: block;
+}
+.header_nav{
+  position: static;
+  width: auto;
+}
+
+.menu{
+  display: flex;
+}
+.menu_enlace{
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px aqua;
+  padding: 20px;
+}
+/*------------------------------*/
 
 .header_link{
-  position: relative;
-  width: 100px;
+  width: 100%;
   height: 100%;
-  float: left;
   padding-top: 6px;
   margin-right: 20px;
   color: black;
@@ -61,21 +187,16 @@ a{
 }
 
 .header_top .soporte{
-  position: relative;
-  width: 200px;
+  width: 40%;
   height: 100%;
-  float: right;
   padding-top: 14px;
   margin-right: 40px;
   color: black;
 }
 
 .header_top .carrito{
-  position: relative;
-  width: 200px;
   height: 100%;
   background-color: rgb(71,88,131);
-  float: right;
   padding-top: 6px;
   padding-left: 20px;
   padding-right: 20px;
@@ -99,7 +220,15 @@ a{
   position: relative;
   width: 200px;
 }
-
+ul.menu li ul{
+  display: none;
+}
+/*
+ul.menu li:hover ul{
+  top:0;
+  display: block;
+}
+*/
 .menu{
   display: flex;
   list-style: none;
@@ -110,10 +239,13 @@ a{
   margin-right: 5px;
   transition: all .6s ease;
   padding: 15px;
+  cursor: pointer;
 }
-.menu li:hover{
+
+.menu li:hover,.menu_movil a:hover{
   background-color: rgba(20, 167, 249, 0.4);
 }
+
 .menu .selected{
   border-top: 1px solid rgb(44,214,255);
 }
@@ -168,6 +300,7 @@ a{
   background: linear-gradient(to right, rgb(27,177,216) 50%, rgb(43, 56, 81) 50%);
   background-size: 200% 100%;
   background-position:right bottom;
+  border-radius: 4px;
 }
 
 
@@ -189,6 +322,7 @@ a{
   background: linear-gradient(to right, rgb(27,177,216) 50%, rgb(44,214,255) 50%);
   background-size: 200% 100%;
   background-position:right bottom;
+  border-radius: 4px;
 }
 
 .btn-buy:hover{
@@ -411,7 +545,7 @@ a{
   text-align: center;
 }
 
-.table_one_quarter_last .boton:hover{
+.table_one_quarter_last:hover .boton{
   background-color: #2bdefc;
   color: white;
 }
@@ -433,7 +567,7 @@ a{
   padding-top: 30px;
   background-color: rgb(44, 214, 255);
   color: rgb(37, 37, 37);
-  height: 320px;
+  padding-bottom: 80px;
 }
 
 .domain h3{
@@ -503,11 +637,18 @@ a{
 
 /* Seccion 4 */
 .services{
+  width: 100%;
+  background-image: url(../imagenes/servidor.jpg);
+  background-size: 100% 100%;
+}
+
+.services_trans{
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
   padding-top: 30px;
   padding-bottom: 90px;
-  width: 100%;
-  background-color: black;
   color: white;
+
 }
 
 .services h3{
@@ -515,12 +656,13 @@ a{
   text-align: center;
   word-spacing: -5px;
 }
-.services p{
+.services .span1 p{
   color: rgb(201,201,201);
-  text-align: center;
   margin-bottom: 20px;
   width: 65%;
   margin: 0 auto;
+  font-size: 15px;
+  text-align: center;
 }
 
 .services .span2{
@@ -531,7 +673,7 @@ a{
 }
 
 .span2 .top{
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 .span2 .top,.bottom{
@@ -541,6 +683,7 @@ a{
 
 .span2 .col-3{
   display: inline-flex;
+  margin-left: 20px;
 }
 
 .col-3 .icon{
@@ -548,7 +691,7 @@ a{
 }
 
 .col-3 .icon img{
-  width: 60px;
+  width: 50px;
   transition: all 0s linear;
 
 }
@@ -561,16 +704,21 @@ a{
 
 .col-3 .description{
   float: right;
+  margin-left: 25px;
 }
 
 .description h3{
   font-size: 22px;
   margin-top: -5px;
+  text-align: left;
 }
 
 .description p{
-  text-align: justify;
+  padding-left: -30;
   margin-bottom: 50px;
+  text-align: left;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .description a{
@@ -600,7 +748,7 @@ a{
   height: 557px;
 }
 
-.container{
+.section5 .container{
   margin-left: 10%;
   margin-right: 10%;
   padding-left: 15px;
@@ -728,17 +876,16 @@ a{
 /* Contacto */
 
 .contact{
-  padding: 50px;
-  padding-bottom: 350px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 50px;
 }
 
 .contact .container{
   padding: 5px;
 }
 
-.contact .contact_left{
-  float: left;
-}
+
  .contact_form input,textarea{
   display:block;
   margin-bottom: 15px;
@@ -779,10 +926,6 @@ a{
   transform: scale(.97);
 }
 
-.contact .contact_right{
-  float: right;
-}
-
 .contact_right ul{
   display: inline-flex;
   padding-left: 0;
@@ -805,6 +948,231 @@ a{
 
 
 }
+
+/*Diseño responsivo */
+
+@media (max-width:420px) {
+  .imagen{
+    background-image: url(../imagenes/background2.jpg);
+    height: 500px;
+  }
+
+  .header_top{
+    display: block;
+    height: auto;
+  }
+  .header_top_left{
+    width: 100%;
+    display: flex;
+  }
+
+  .header_top_right{
+    width: 100%;
+    display:flex;
+  }
+  .header_link{
+    width: 50vw;
+  }
+
+  .carrito .icon-shopping-cart{
+    font-size: 20px;
+  }
+  .carrito{
+    font-size: 12px;
+    width: 50vw;
+    padding-bottom: 10px;
+  }
+  .soporte{
+    font-size: 13px;
+    width: 80vw;
+    margin-left: -30px;
+  }
+  .header_bottom{
+    top: 80px;
+  }
+  .header_bottom .logo{
+    width: 120px;
+  }
+  .header_nav{
+    display: none;
+  }
+  .plan{
+    top: 125px;
+  }
+
+  .plan h3{
+    font-size: 16px;
+    word-spacing: -2px;
+  }
+
+  .plan .plans-btn{
+    margin-top: 0px;
+  }
+  .plans-btn .btn-plans,.btn-buy{
+    font-size: 12px;
+    width:110px;
+    height: 30px;
+    padding: 10px;
+  }
+
+  .section2{
+    display: block;
+  }
+  .cols_one_quarter{
+    width: 100%;
+  }
+
+  .section3 h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .section3 p{
+    padding: 0;
+    font-size: 12px;
+  }
+  .plans{
+    display: block;
+  }
+  .plans .table_one_quarter,.table_one_quarter_last{
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .plans .table_one_quarter_last{
+    margin-bottom: 0;
+  }
+
+  .domain{
+    padding-bottom: 50px;
+  }
+
+  .domain h3{
+    font-size: 20px;
+    word-spacing: 0px;
+  }
+  .domain .search{
+    width: 90vw;
+  }
+  .domain .search .domain-input,.domain-select,.domain-submit{
+    height: 50px;
+  }
+  .domain .search .domain-input{
+    word-spacing: -6px;
+    font-size: 13px;
+    width: 160px;
+    height: 50px;
+  }
+  .domain .search .domain-select select{
+    font-size: 16px;
+  }
+
+  .span2 .top, .bottom{
+    display: block;
+  }
+
+  .description{
+    margin-bottom: 60px;
+  }
+
+  .span2 .top{
+    margin-bottom: 0px;
+  }
+
+  .texto1{
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .section5 .span5{
+    display: block;
+    margin-top: -50px;
+  }
+
+  .span_5-left, .span_5-right{
+    width: 100%;
+  }
+
+  .span_imagen{
+    height: 200px;
+    margin-left: 30%;
+    margin-top: 20px;
+  }
+
+  .comillas{
+    height: 70px;
+    margin-left: 30px;
+  }
+
+  .cols2{
+    width: 100%;
+  }
+
+  .cols2 .foto{
+    width: 20%;
+  }
+
+  .cols2 .text_description{
+    width: 80%;
+    padding-left: 20px;
+  }
+
+  .contact {
+    display: block;
+    padding: 0px;
+  }
+
+  .contact .container{
+    display: block;
+  }
+  .contact .contact_left{
+    margin-bottom: 30px;
+  }
+  .contact .contact_right,.contact_left{
+    float: none;
+  }
+
+   .contact .contact_form input[type='text']{
+     width: 200px;
+   }
+   .contact .contact_form textarea{
+     width: 250px;
+   }
+   .contact .contact_form input[type='submit']{
+     width: 130px;
+   }
+   .icon-bars{
+     display: block;
+   }
+
+}
+
+@media (min-width:1024) {
+  .carrito{
+    width: 45%;
+  }
+  .soporte{
+    margin-left: 15%;
+  }
+  .header_top{
+    padding-right: 10%;
+  }
+  .contact .contact_left{
+    float: left;
+  }
+  .contact .contact_right{
+    float: right;
+  }
+  .contact .container{
+    display: inline-flex;
+  }
+}
+
+.mostrar{
+  display: block;
+}
+
 
 /* Fuentes */
 

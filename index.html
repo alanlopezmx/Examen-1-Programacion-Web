@@ -10,36 +10,87 @@
 </head>
 
 <body>
+  <div id="menu_boton" class="icon-bars"></div>
+  <div id="menu_movil" class="menu_movil">
+    <a href="#">HOME</a>
+    <a href="#">WHY CONNECT</a>
+    <a href="#">SERVICES</a>
+    <a href="#">FEEDBACK</a>
+    <a href="#">BLOG</a>
+    <a href="#">SUPPORT</a>
+  </div>
     <div class="section1">
         <div class="header_top">
+          <div class="header_top_left">
             <a href="#">
                 <div class="header_link">Dollar <span class="icon-angle-down"></span></div>
             </a>
             <a href="#">
                 <div class="header_link">English <span class="icon-angle-down"></span></div>
             </a>
+          </div>
+          <div class="header_top_right">
+            <div class="soporte">24/7 Support 010-25418796 </div>
             <a href="#">
                 <div class="carrito"><span class="icon-shopping-cart"></span> Checkout Now</div>
             </a>
-            <div class="soporte">24/7 Support 010-25418796 </div>
+          </div>
         </div>
         <div class="header_bottom">
             <div class="logo">
                 <a href="index.html"><img src="imagenes/logo.png" alt=""></a>
             </div>
-            <div class="header_nav">
+            <nav class="header_nav">
                 <ul class="menu">
-                    <li class="selected"><a href="">HOME</a></li>
-                    <li><a href="">WHY&nbspCONNECT</a></li>
-                    <li><a href="">SERVICES</a></li>
-                    <li><a href="">FEEDBACK</a></li>
-                    <li><a href="">BLOG</a></li>
+                    <li class="selected"><a href="">HOME</a>
+                      <ul>
+                        <li><a href="" class="menu_enlace">Submenu1</a></li>
+                        <li><a href="" class="menu_enlace">Submenu2</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="">WHY&nbspCONNECT</a>
+                      <ul>
+                        <li><a href="" class="menu_enlace">Submenu1</a></li>
+                        <li><a href="" class="menu_enlace">Submenu2</a>
+                          <ul>
+                            <li><a href="" class="menu_enlace">Submenu1</a></li>
+                            <li><a href="" class="menu_enlace">Submenu2</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="">SERVICES</a>
+                      <ul>
+                        <li><a href="" class="menu_enlace">Submenu1</a></li>
+                        <li><a href="" class="menu_enlace">Submenu2</a></li>
+                        <li><a href="" class="menu_enlace">Submenu3</a>
+                          <ul>
+                            <li><a href="" class="menu_enlace">Submenu1</a></li>
+                            <li><a href="" class="menu_enlace">Submenu2</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="" class="menu_enlace">Submenu4</a></li>
+                        <li><a href="" class="menu_enlace">Submenu5</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="">FEEDBACK</a>
+                      <ul>
+                        <li><a href="" class="menu_enlace">Submenu1</a></li>
+                        <li><a href="" class="menu_enlace">Submenu2</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="">BLOG</a>
+                      <ul>
+                        <li><a href="" class="menu_enlace">Submenu1</a></li>
+                      </ul>
+                    </li>
                     <li><a href="">SUPPORT</a></li>
                 </ul>
+
                 <div class="btn-client">CLIENT AREA</div>
-            </div>
+            </nav>
         </div>
-        <img src="imagenes/background.jpg" alt="background">
+        <div class="imagen"></div>
     </div>
     <div class="plan">
         <h3>Konnect with us for better Experience</h3>
@@ -249,17 +300,16 @@
                 <button class="domain-submit" type="submit"><div class="icon-search"></div></button>
             </div>
         </center>
-
     </div>
     <div class="services">
+      <div class="services_trans">
       <div class="span1">
         <h3>Services Offered</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
       </div>
       <div class="span2">
-        <center>
           <div class="top">
-            <div class="col-3">
+            <div class="col-3 first">
               <div class="icon"><img src="imagenes/img1.png" alt=""></div>
               <div class="description">
                 <h3>WEB HOSTING</h3>
@@ -284,10 +334,8 @@
               </div>
             </div>
           </div>
-        </center>
-        <center>
           <div class="bottom">
-            <div class="col-3">
+            <div class="col-3 first">
               <div class="icon"><img src="imagenes/img4.png" alt=""></div>
               <div class="description">
                 <h3>DEDICATED SERVER</h3>
@@ -312,8 +360,8 @@
               </div>
             </div>
           </div>
-        </center>
       </div>
+    </div>
     </div>
     <div class="section5">
       <div class="container">
@@ -375,6 +423,7 @@
         </div>
       </div>
     </div>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
