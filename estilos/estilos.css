@@ -977,7 +977,8 @@ ul.menu li:hover ul{
     display:flex;
   }
   .header_link{
-    width: 50vw;
+    width: 30vw;
+    margin-left: 30px;
   }
 
   .carrito .icon-shopping-cart{
@@ -1101,6 +1102,7 @@ ul.menu li:hover ul{
   }
 
   .span_imagen{
+    width: 95%;
     height: 200px;
     margin-left: 30%;
     margin-top: 20px;
@@ -1138,6 +1140,11 @@ ul.menu li:hover ul{
   }
   .contact .contact_right,.contact_left{
     clear:both;
+    float: none;
+  }
+
+  .contact .contact_right{
+    margin-left: 10%;
   }
 
    .contact .contact_form input[type='text']{
